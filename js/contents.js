@@ -2,27 +2,25 @@
 /*
 var contents = document.getElementById('AdultContents');
 
-//マウスホバー時に、モザイク処理
+//hover
 contents.addEventListener('mouseenter',function() {
 		console.log('Hover Now');
 })
 
-//マウスアウト時に、モザイク処理
+//out
 contents.addEventListener('mouseleave',function() {
 		console.log('Hover Out');
 })
 */
 
-$(funtion() {
+//mouse roll over
 
-	$('#AdultContents').hover(
-		function(){
-			console.log('Hover Now');
-		},
 
-		function(){
-			console.log('Hover Out');
-		}
-	);
-
-});
+$('#AdultContents').hover(
+	function(){
+		$(this).css('opacity','1');
+	},
+	function(){
+		$(this).css('opacity','0.1');
+	}
+);
