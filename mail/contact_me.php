@@ -1,4 +1,7 @@
 <?php
+mb_language("Japanese");
+mb_internal_encoding("UTF-8");
+
 // Check for empty fields
 if(empty($_POST['name'])      ||
    empty($_POST['email'])     ||
@@ -28,10 +31,10 @@ $email_body = "You have received a new message from your website contact form.\n
 
 //送信元Emailアドレス
 //Line Api使用したりチャットワーク使用してもいいな
-$headers = "harmonicsprogram@gmail.com"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers = 'From: harmonicsprogram@gmail.com' . "\r\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";
 
-mail($to,$email_subject,$email_body,$headers);
+mb_send_mail($to, $email_subject, $email_body, $headers);
 return true;
 
 ?>
