@@ -28,7 +28,7 @@ $email_body = "You have received a new message from your website contact form.\n
 
 //送信元Emailアドレス
 //Line Api使用したりチャットワーク使用してもいいな
-$headers = "From: harmonicsprogram@gmail.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers = "harmonicsprogram@gmail.com"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";
 
 mail($to,$email_subject,$email_body,$headers);
